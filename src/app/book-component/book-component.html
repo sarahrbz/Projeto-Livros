@@ -1,0 +1,101 @@
+<div class="container">
+
+  <div class="display-4 text-center">Cadastro de Livros</div>
+
+  <form [formGroup]="formGroupBook">
+   <div class="mb-3">
+      <label for="inputTitle" class="form-label">Título</label>
+      <input formControlName="title" type="text" class="form-control" id="inputTitle">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputAuthor" class="form-label">Autor</label>
+      <input formControlName="author" type="text" class="form-control" id="inputAuthor">
+    </div>
+
+    <div class="mb-3">
+      <label for="inputPrice" class="form-label">Preço</label>
+      <input formControlName="price" type="text" class="form-control" id="inputPrice">
+    </div>
+
+    <div class="mb-3">
+      <label>Tipo:</label>
+
+      <div class="form-check">
+        <input type="radio" value="fisico" formControlName="type">
+        <label> Físico</label>
+    </div>
+
+    <div class="form-check">
+      <input type="radio" value="ebook" formControlName="type">
+      <label> E-book</label>
+    </div>
+  </div>
+
+  <div class="mb-3">
+  <label>Genero</label>
+  <select class="form-select" formControlName="gender">
+    <option value="">Selecione</option>
+    <option value="romance">Romance</option>
+    <option value="suspense">Suspense</option>
+    <option value="terror">Terror</option>
+    <option value="humor">Humor</option>
+    <option value="comedia">Comédia</option>
+    <option value="ficcao">Ficção</option>
+    <option value="biografia">Biografia</option>
+    <option value="ficcao-cientifica">Ficção Cientifíca</option>
+    <option value="misterio">Mistério</option>
+  </select>
+</div>
+
+<div class="mb-3">
+  <label>Público-alvo:</label>
+
+  <div class="form-check">
+    <input type="checkbox" (change)="onCheck($event)" value="infantil" >
+    <label>Infantil</label>
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" (change)="onCheck($event)" value="infanto" >
+    <label>Infantojuvenil</label>
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" (change)="onCheck($event)" value="jovem" >
+    <label>Jovem</label>
+  </div>
+
+  <div class="form-check">
+    <input type="checkbox" (change)="onCheck($event)" value="adulto" >
+    <label>Adulto</label>
+  </div>
+</div>
+
+  <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+  </form>
+  tal de produtos: {{books.length}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Genero</th>
+      <th scope="col">Publico-Alvo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of books">
+      <td>{{b.title}}</td>
+      <td>{{b.author}}</td>
+      <td>{{b.price}}</td>
+      <td>{{b.type}}</td>
+      <td>{{b.gender}}</td>
+      <td>{{b.public?.join(', ')}}</td>
+    </tr>
+   </tbody>
+</table>
+</div>
