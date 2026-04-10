@@ -45,6 +45,8 @@
     <option value="biografia">Biografia</option>
     <option value="ficcao-cientifica">Ficção Cientifíca</option>
     <option value="misterio">Mistério</option>
+    <option value="darkromance">Dark Romance</option>
+
   </select>
 </div>
 
@@ -85,6 +87,7 @@
       <th scope="col">Tipo</th>
       <th scope="col">Genero</th>
       <th scope="col">Publico-Alvo</th>
+      <th scope="col">Remover</th>
     </tr>
   </thead>
   <tbody>
@@ -94,7 +97,12 @@
       <td>{{b.price}}</td>
       <td>{{b.type}}</td>
       <td>{{b.gender}}</td>
-      <td>{{b.public?.join(', ')}}</td>
+      <td>{{b.public}}</td> <!--?.join(', ')---->
+      <td>
+        <button class="btn btn-danger" (click)="delete(b)">
+          Remover
+        </button>
+      </td>
     </tr>
    </tbody>
 </table>
