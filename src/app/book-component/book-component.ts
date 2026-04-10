@@ -2,6 +2,7 @@ import { Component, OnInit, signal } from '@angular/core';
 import { Book } from '../book';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BookService } from '../book-service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-book-component',
@@ -11,6 +12,7 @@ import { BookService } from '../book-service';
 })
 export class BookComponent implements OnInit {
   books = signal<Book[]>([]);
+  isEditing = false;
   formGroupBook: FormGroup;
 
    constructor(private formBuilder: FormBuilder, private service : BookService) {
@@ -68,5 +70,23 @@ export class BookComponent implements OnInit {
       }
     )
   }
+
+  onClickUpdate(book: Book){
+    this.formGroupBook.setValue(book);
+    this.isEditing = true;
+  }
+
+  update(){
+    this.service.update(this.formGroupBook.value).subscribe(
+      {
+        next: json => {
+          this.books.update(books => books.map(b => b.id === json.id ? json : b));
+          this.isEditing = false;
+          this.formGroupBook.reset();
+        }
+      }
+    )
+  }
+
 }
 

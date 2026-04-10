@@ -36,14 +36,14 @@
       "gender": "Romance",
       "public": "Adulto, Jovem"
     },
-
-    {"id": 5,
-    "title": "Devil's Night",
-    "author": "Penolope Douglas",
-    "price": 0.00, "type": "E-book",
-    "gender": "Dark Romance",
-    "public": "Adulto"
-  }
-
+    {
+      "id": 5,
+      "title": "Devil's Night",
+      "author": "Penolope Douglas",
+      "price": 0,
+      "type": "E-book",
+      "gender": "Dark Romance",
+      "public": "Adulto"
+    }
   ]
 }

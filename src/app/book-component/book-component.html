@@ -74,7 +74,9 @@
   </div>
 </div>
 
-  <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+  <button *ngIf="!isEditing"   type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
+  <button *ngIf="isEditing"   type="submit" class="btn btn-primary"  (click)="update()">Atualizar</button>
+
   </form>
   tal de produtos: {{books().length}}
 
@@ -88,6 +90,7 @@
       <th scope="col">Genero</th>
       <th scope="col">Publico-Alvo</th>
       <th scope="col">Remover</th>
+      <th scope="col">Editar</th>
     </tr>
   </thead>
   <tbody>
@@ -101,6 +104,11 @@
       <td>
         <button class="btn btn-danger" (click)="delete(b)">
           Remover
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-secondary" (click)="onClickUpdate(b)" >
+          Alterar
         </button>
       </td>
     </tr>
