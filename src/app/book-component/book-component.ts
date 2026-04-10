@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { Book } from '../book';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { BookService } from '../book-service';
 
 @Component({
   selector: 'app-book-component',
@@ -8,11 +9,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './book-component.html',
   styleUrl: './book-component.css',
 })
-export class BookComponent {
-  books: Book[] = [];
+export class BookComponent implements OnInit {
+  books = signal<Book[]>([]);
   formGroupBook: FormGroup;
 
-   constructor(private formBuilder: FormBuilder) {
+   constructor(private formBuilder: FormBuilder, private service : BookService) {
 
     this.formGroupBook = formBuilder.group({
       id: [''],
@@ -23,6 +24,13 @@ export class BookComponent {
       gender: [''],
       public: [[]]
     });
+  }
+  ngOnInit(): void {
+    this.service.getAllBooks().subscribe(
+      {
+        next: json => this.books.set(json)
+      }
+    );
   }
 
   onCheck(event: any) {
@@ -41,11 +49,14 @@ export class BookComponent {
 }
 
   save() {
-    console.log(this.formGroupBook.value);
-  this.books.push(this.formGroupBook.value);
-  this.formGroupBook.reset({
-    public: []
-  });
+    this.service.save(this.formGroupBook.value).subscribe(
+      {
+        next: json => {
+          this.books.update(books => [...books, json]);
+          this.formGroupBook.reset()
+        }
+      }
+    )
   }
 }
 

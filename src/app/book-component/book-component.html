@@ -74,7 +74,7 @@
 
   <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
   </form>
-  tal de produtos: {{books.length}}
+  tal de produtos: {{books().length}}
 
 <table class="table">
   <thead>
@@ -88,7 +88,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let b of books">
+    <tr *ngFor="let b of books()">
       <td>{{b.title}}</td>
       <td>{{b.author}}</td>
       <td>{{b.price}}</td>

@@ -1,0 +1,12 @@
+{
+  "books": [
+    {"id": 1, "title": "Uma segunda chance", "author": "Collen Houver", "price": 49.90, "type": "Físico", "gender": "Romance", "public": "Adulto"},
+    {"id": 2, "title": "Os sete maridos de Evelyn Hugo", "author": "Taylor Jenkis Reed", "price": 56.00, "type": "Físico", "gender": "Romance", "public": "Adulto"},
+    {"id": 3, "title": "Se não eu, quem vai fazer você feliz?", "author": "Graziella Gonçalves", "price": 39.90, "type": "Físico", "gender": "Biografia", "public": "Adulto"},
+    {"id": 4, "title": "Capitães da areia", "author": "Jorge Amado", "price": 24.60, "type": "Físico", "gender": "Romance", "public": "Adulto, Jovem"},
+    {"id": 5, "title": "Devil's Night", "author": "Penolope Douglas", "price": 0.00, "type": "E-book", "gender": "Dark Romance", "public": "Adulto"}
+
+
+
+  ]
+}
