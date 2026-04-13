@@ -7,7 +7,8 @@
       "price": 49.9,
       "type": "Físico",
       "gender": "Romance",
-      "public": "Adulto"
+      "public": "Adulto",
+      "destaque": true
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "price": 56,
       "type": "Físico",
       "gender": "Romance",
-      "public": "Adulto"
+      "public": "Adulto",
+      "destaque": true
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "price": 39.9,
       "type": "Físico",
       "gender": "Biografia",
-      "public": "Adulto"
+      "public": "Adulto",
+      "destaque": true
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "price": 24.6,
       "type": "Físico",
       "gender": "Romance",
-      "public": "Adulto, Jovem"
+      "public": "Adulto, Jovem",
+      "destaque": false
     },
     {
       "id": 5,
@@ -43,7 +47,34 @@
       "price": 0,
       "type": "E-book",
       "gender": "Dark Romance",
-      "public": "Adulto"
+      "public": "Adulto",
+      "destaque": false
+    },
+    {
+      "id": 6,
+      "title": "Daisy Jones & The Six",
+      "author": "Taylor Jenkis Reed",
+      "price": "62.45",
+      "type": "fisico",
+      "gender": "romance",
+      "public": [
+        "jovem",
+        "adulto"
+      ],
+      "destaque": false
+    },
+    {
+      "id": 7,
+      "title": "Harry Potter e a pedra filosofal",
+      "author": "JK Rowlling",
+      "price": "56.98",
+      "type": "fisico",
+      "gender": "romance",
+      "public": [
+        "infantil",
+        "infanto"
+      ],
+      "destaque": true
     }
   ]
 }

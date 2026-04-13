@@ -5,6 +5,7 @@ export interface Book {
   price: number,
   type: string,
   gender: string,
-  public: string[];
+  public: string[],
+  destaque: boolean;
 
 }

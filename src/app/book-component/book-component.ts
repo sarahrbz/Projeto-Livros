@@ -24,7 +24,8 @@ export class BookComponent implements OnInit {
       price: [''],
       type: [''],
       gender: [''],
-      public: [[]]
+      public: [[]],
+      destaque: [false]
     });
   }
   ngOnInit(): void {

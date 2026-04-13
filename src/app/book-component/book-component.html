@@ -74,6 +74,13 @@
   </div>
 </div>
 
+<div class="form-check mb-3">
+<input type="checkbox" class="form-check-input" formControlName="destaque">
+<label class="form-check-label">
+Livro em destaque
+</label>
+</div>
+
   <button *ngIf="!isEditing"   type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
   <button *ngIf="isEditing"   type="submit" class="btn btn-primary"  (click)="update()">Atualizar</button>
 
@@ -89,6 +96,7 @@
       <th scope="col">Tipo</th>
       <th scope="col">Genero</th>
       <th scope="col">Publico-Alvo</th>
+      <th scope="col">Destaque?</th>
       <th scope="col">Remover</th>
       <th scope="col">Editar</th>
     </tr>
@@ -101,6 +109,7 @@
       <td>{{b.type}}</td>
       <td>{{b.gender}}</td>
       <td>{{b.public}}</td> <!--?.join(', ')---->
+      <td>{{ b.destaque ? 'Sim' : 'Não' }}</td>
       <td>
         <button class="btn btn-danger" (click)="delete(b)">
           Remover
